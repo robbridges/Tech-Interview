@@ -5,18 +5,20 @@ const meetingTimes = {
 
 }
 
-let meetingTimesArray = [];
+
 
 let problem = false;
 
 const addMeetingTimes = (start, end) => {
   const meetingStart = start;
   const meetingEnd = end;
+  checkMeetingTimes(start,end);
   for (let i = meetingStart; i <= meetingEnd; i++) {
     meetingTimes[i] = "taken";
   }
 }
 const checkMeetingTimes = (start, end) => {
+  let meetingTimesArray = [];
   for (let i = start; i <= end; i++) {
     meetingTimesArray.push(i.toString());
   }
@@ -25,15 +27,16 @@ const checkMeetingTimes = (start, end) => {
       problem = true;
       return;
     }
-    
+    meetingTimesArray = [];
 
   }
 }
 
-addMeetingTimes(8,12);
-addMeetingTimes(5, 7);
-checkMeetingTimes(1,4);
-problem ? console.log('Nope, doesnt work out') : console.log('This would work');
+addMeetingTimes(1,6);
+addMeetingTimes(7,8);
+addMeetingTimes(8,10);
+problem ? console.log('this would not work') : console.log('this would work');
+
 
 
 
