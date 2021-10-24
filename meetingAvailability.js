@@ -5,16 +5,17 @@ const meetingTimes = {
 
 }
 
-
-
-let problem = false;
-
 const addMeetingTimes = (start, end) => {
   const meetingStart = start;
-  const meetingEnd = end;
-  checkMeetingTimes(start,end);
-  for (let i = meetingStart; i <= meetingEnd; i++) {
-    meetingTimes[i] = "taken";
+  const meetingEnd = end; 
+  try {
+    checkMeetingTimes(start,end);
+    for (let i = meetingStart; i <= meetingEnd; i++) {
+      meetingTimes[i] = "taken";
+    }
+    console.log(`Meeting from ${start} to ${end} successfully added`);
+  } catch (e) {
+    console.log(`Meeting from ${start} to ${end} not added, you  are already scheduled`);
   }
 }
 const checkMeetingTimes = (start, end) => {
@@ -24,10 +25,9 @@ const checkMeetingTimes = (start, end) => {
   }
   for (let number of meetingTimesArray) {
     if (meetingTimes[number]) {
-      problem = true;
-      return;
+      throw new Error('No, you are already booked');
     }
-    meetingTimesArray = [];
+    
 
   }
 }
@@ -35,8 +35,3 @@ const checkMeetingTimes = (start, end) => {
 addMeetingTimes(1,6);
 addMeetingTimes(7,8);
 addMeetingTimes(8,10);
-problem ? console.log('this would not work') : console.log('this would work');
-
-
-
-
