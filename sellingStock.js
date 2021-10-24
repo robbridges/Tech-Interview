@@ -14,8 +14,8 @@ var maxProfit = function(prices) {
     // can't be done on the same day, so we buy on this day.
     // the next day the price is 5, we already know that we bought at min, and if sold today
     // max would be come 4, so far the current max, let we refine it 5 a few iterations later
-    
-    max = Math.max(max,prices[i] - min);
+
+    max = Math.max(max, prices[i] - min);
   }
   return max;
 };
