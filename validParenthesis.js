@@ -3,7 +3,7 @@ var isValid = function(s) {
   
   for (let i = 0 ; i < s.length ; i++) {
       console.log(stack);
-      let c = s[i];
+      let c = s.charAt(i);
       switch(c) {
           case '(': stack.push(')'); // found, we push to the stack ')'
               break;
