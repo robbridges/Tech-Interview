@@ -13,4 +13,4 @@
     return steps;
 };
 
-console.log(numberOfSteps(123));
+console.log(numberOfSteps(123)); 
