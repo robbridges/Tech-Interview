@@ -7,12 +7,8 @@
     const vowelsFound = s.match(/[aeiou]/gi);
     let answer = ''
     for (let i =0; i < s.length; i++) {
-      if (vowels.includes(s[i])) {
-        answer += vowelsFound.pop();
 
-      } else {
-        answer += s[i];
-      }
+      vowels.includes(s[i]) ? answer += vowelsFound.pop() : answer += s[i];
     }
     return answer;
 };
