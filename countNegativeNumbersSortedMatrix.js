@@ -24,6 +24,7 @@ const negativePerEach = (array) => {
       count++
       end--
     } else {
+      console.log(`${array[end]} is not less than 0, I'm out!`)
       break;
     }
     
